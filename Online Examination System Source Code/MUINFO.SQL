@@ -1,0 +1,1 @@
+create table madmininfo (adminid varchar(20),adminpw varchar(20))

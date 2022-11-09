@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>ONLINE EXAM</TITLE>
+<script language="JavaScript">
+function f1(form)
+{ 
+   if(form.ui.value == "")
+   {
+	alert("Sorry! U must enter through LOGINID");
+	form.ui.value="";
+	form.ui.focus();
+   }	
+   if(form.ui.value.length>20)
+   {
+	alert("LOGINID is out of range(maximum 20)");
+	form.ui.value="";
+	form.ui.focus();
+   }
+}
+function f2(form)
+{ 
+   if(form.pw.value == "")
+   {
+	alert("Sorry! U must enter PASSWORD");
+	form.pw.value="";
+	form.pw.focus();
+   }	
+   if(form.pw.value.length>20)
+   {
+	alert("PASSWORD is out of range(maximum 20)");
+	form.pw.value="";
+	form.pw.focus();
+   }
+}
+</script>
+<noscript>
+	Your Browser Doesn't Support
+</noscript>
+</HEAD>
+<BODY bgcolor=lightyellow background=paper_bg.gif>
+<form name=frm2 method=post action="http://peers:8080/servlet/RPWLogin">
+<pre>
+<font size=3px color=blue>
+           LOGINID      <input type=text name=ui size=15 onChange="f1(this.form)">
+	   PASSWORD     <input type=password name=pw size=15 onChange="f2(this.form)">
+
+
+            <input type=submit name=b1 value=Login..></font>
+<font size=5px color=blue>
+		  <b><a href=options.html>Option..</a>   <a href=users.html>Back..</a>
+</font>
+</pre>
+</form>
+</BODY>
+</HTML>

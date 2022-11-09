@@ -1,0 +1,5 @@
+create table madmininfo (adminid varchar(20),adminpw varchar(20))
+create table musersinfo(loginid varchar(20) primary key,password varchar(20),repassword varchar(20),firstname varchar(20),lastname varchar(20),birthdate varchar(11),gender varchar(1),occupation varchar(20))
+create table msubjectinfo(sub_code varchar(1) primary key,sub_title varchar(25))
+create table mresult(loginid varchar(20) primary key,sub_code varchar(1),attempted integer,correct integer,wrong integer,marks integer)
+create table mquestions(qid integer primary key,qcode varchar(1),qname varchar(200),ans1 varchar(200),ans2 varchar(200),ans3 varchar(200),ans4 varchar(200),qans varchar(1))

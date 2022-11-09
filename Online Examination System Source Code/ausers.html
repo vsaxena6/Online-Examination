@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>ONLINE EXAM</TITLE>
+<script language="JavaScript">
+function f1(form)
+{ 
+   if(form.aui.value == "")
+   {
+	alert("Sorry! U entered ADIMIN-LOGINID");
+	form.aui.value="";
+	form.aui.focus();
+   }	
+   if(form.aui.value.length>20)
+   {
+	alert("ADIMIN-LOGINID is out of range(maximum 20)");
+	form.aui.value="";
+	form.aui.focus();
+   }
+}
+function f2(form)
+{ 
+   if(form.apw.value.length>20)
+   {
+	alert("PASSWORD is out of range");
+	form.apw.value="";
+	form.apw.focus();
+   }
+   if(form.apw.value == "")
+   {
+	alert("Sorry! U enter PASSWORD");
+	form.apw.value="";
+	form.apw.focus();
+   }	
+}
+function f3(form)
+{ 
+   if(form.arpw.value.length>20)
+   {
+	alert("RE-PASSWORD is out of range");
+	form.arpw.value="";
+	form.arpw.focus();
+   }
+   if(!(form.apw.value == form.arpw.value))
+   {
+	alert("Sorry U PASSWORDS are not matched...");
+	form.apw.value="";
+	form.arpw.value="";
+	form.apw.focus();
+   }
+}
+</script>
+<noscript>
+	Your Browser Doesn't Support
+</noscript>
+</HEAD>
+<BODY bgcolor=lightyellow background=paper_bg.gif>
+<form name=frm1 method=post action="http://peers:8080/servlet/AUsers">
+<font size=3px color=blue>
+<pre>
+	   ADIMIN-LOGINID <input type=text name=aui size=20 onChange="f1(this.form)">
+	   PASSWORD       <input type=password name=apw size=20 onChange="f2(this.form)">
+	   RE-PASSWORD    <input type=password name=arpw size=20 onChange="f3(this.form)">
+
+			     <input type=submit name=b1 value=Submit></font><font size=5px color=blue> <b><a href=aus.html>Back..</a></b>
+</pre>
+</font>
+</form>
+</BODY>
+</HTML>
+ 

@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>ONLINE EXAM</title>
+<script>
+	var h="0"+0;
+	var m=59;
+	var s=59;
+	function f1()
+	{
+   	     	var t1=h+":"+m+":"+s;
+        	document.fr.tx.value=t1;
+        	t1=setTimeout("f1()",1000);
+        	if(m>=0)
+        	{
+        		s--;
+        		if((s<10)&&(s>=0))
+        		{
+        			s="0"+s;
+        		}
+        		if(s==-1)
+        		{
+        			m--;
+        			s=59;
+        		}
+        	}
+	}
+</script>
+</head>
+<body bgcolor=blue background=paper_bg.gif onLoad="f1()" >
+	<form name="fr">
+		<spacer type=horizontal size=440 > Time Left : <input type=text  size=8 name="tx" ></spacer>
+		<img src="wait.gif" alt="time-left">
+	</form>
+</body>
+</html>

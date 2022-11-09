@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>ONLINE EXAM</TITLE>
+<script language="JavaScript">
+function f1(form)
+{ 
+   if(form.aui.value == "")
+   {
+	alert("Sorry! U entered ADIMIN-LOGINID");
+	form.aui.value="";
+	form.aui.focus();
+   }	
+   if(form.aui.value.length>20)
+   {
+	alert("ADIMIN-LOGINID is out of range(maximum 20)");
+	form.aui.value="";
+	form.aui.focus();
+   }
+}
+function f2(form)
+{ 
+   if(form.aopw.value.length>20)
+   {
+	alert("PASSWORD is out of range");
+	form.aopw.value="";
+	form.aopw.focus();
+   }
+   if(form.aopw.value == "")
+   {
+	alert("Sorry! U enter PASSWORD");
+	form.aopw.value="";
+	form.aopw.focus();
+   }	
+}
+function f3(form)
+{ 
+   if(form.anpw.value.length>20)
+   {
+	alert("PASSWORD is out of range");
+	form.anpw.value="";
+	form.anpw.focus();
+   }
+   if(form.anpw.value == "")
+   {
+	alert("Sorry! U enter PASSWORD");
+	form.anpw.value="";
+	form.anpw.focus();
+   }	
+}
+function f4(form)
+{ 
+   if(form.acpw.value.length>20)
+   {
+	alert("CONFORM-PASSWORD is out of range");
+	form.acpw.value="";
+	form.acpw.focus();
+   }
+   if(!(form.anpw.value == form.acpw.value))
+   {
+	alert("Sorry U PASSWORDS are not matched...");
+	form.anpw.value="";
+	form.acrpw.value="";
+	form.anpw.focus();
+   }
+}
+</script>
+<noscript>
+	Your Browser Doesn't Support
+</noscript>
+</HEAD>
+<BODY bgcolor=lightyellow background=paper_bg.gif>
+<form name=frm2 method=post action="http://peers:8080/servlet/AUsersu">
+<pre>
+<font size=3px color=blue>
+           ADMIN-LOGINID    <input type=text name=aui size=15 onChange="f1(this.form)">
+	   OLD PASSWORD     <input type=password name=aopw size=15 onChange="f2(this.form)">
+	   NEW PASSWORD     <input type=password name=anpw size=15 onChange="f3(this.form)">
+	   CONFORM PASSWORD <input type=password name=acpw size=15 onChange="f4(this.form)">
+
+			       <input type=submit name=b3 value=Submit></font>
+<font size=5px color=blue>
+		     <b><a href=aus.html>back..</a></b>
+</font>
+</pre>
+</form>
+</BODY>
+</HTML>

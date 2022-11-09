@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>ONLINE EXAM</TITLE>
+<script language="JavaScript">
+function f1(form)
+{ 
+   if(form.ali.value == "")
+   {
+	alert("Sorry! U enter through ADMINISTRATIVE-ID");
+	form.ali.value="";
+	form.ali.focus();
+   }	
+   if(form.ali.value.length>15)
+   {
+    alert("ADMINISTRATIVE-ID is out of range(maximum 15)");
+	form.ali.value="";
+	form.ali.focus();
+   }
+}
+function f2(form)
+{ 
+   if(form.apw.value == "")
+   {
+	alert("Sorry! U enter PASSWORD");
+	form.apw.value="";
+	form.apw.focus();
+   }	
+   if(form.apw.value.length>15)
+   {
+    alert("PASSWORD is out of range(maximum 15)");
+	form.apw.value="";
+	form.apw.focus();
+   }
+}
+</script>
+<noscript>
+	Your Browser Doesn't Support
+</noscript>
+</HEAD>
+<BODY bgcolor=lightyellow background=paper_bg.gif>
+<form name=frm3 method=post action="http://peers:8080/servlet/AdOptions">
+<pre>
+<font size=3px color=blue>
+       ADMINISTRATIVE-ID <input type=text name=ali size=15 onChange="f1(this.form)">
+       PASSWORD          <input type=password name=apw size=15 onChange="f2(this.form)">
+
+			     <input type=submit name=b1 value=Login..>
+</font><font size=5px color=blue>
+                    <b><a href=login.html>Back..</a></b>
+</font>
+</pre>
+</form>
+</BODY>
+</HTML>
+
+ 

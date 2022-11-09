@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>ONLINE EXAM</TITLE>
+<script language="JavaScript">
+function f1(form)
+{ 
+   if(form.ui.value == "")
+   {
+	alert("Sorry! U entered LOGINID");
+	form.ui.value="";
+	form.ui.focus();
+   }	
+   else
+   {
+   	k=form.ui.value.charAt(0);
+   	if(((k < "A") || (k > "Z" && k < "z") || (k > "z")) && ( k < "a" || k > "z"))
+   	{
+		alert("Invalid LOGINID...");
+		form.ui.value="";
+		form.ui.focus();
+   	}
+   }
+   if(form.ui.value.length>20)
+   {
+	alert("LOGINID is out of range(maximum 20)");
+	form.ui.value="";
+	form.ui.focus();
+   }
+   else
+   {
+
+  	if(form.ui.value.length>0)
+   	{
+		for(var i=0;i<form.ui.value.length;i++)
+        	{
+			if((form.ui.value.substring(i,i+1)=="_") || (form.ui.value.substring(i,i+1)=="-") ||
+					(form.ui.value.substring(i,i+1)=="&") ||(form.ui.value.substring(i,i+1)=="*") ||
+					(form.ui.value.substring(i,i+1)=="*"))
+			{
+				alert("Invalid special character(Use .)");
+				form.ui.value="";
+	        		form.ui.focus();
+			}
+		}
+   	}
+   }
+}
+function f2(form)
+{ 
+   if(form.pw.value.length>20)
+   {
+	alert("PASSWORD is out of range");
+	form.pw.value="";
+	form.pw.focus();
+   }
+   if(form.pw.value == "")
+   {
+	alert("Sorry! U must enter PASSWORD");
+	form.pw.value="";
+	form.pw.focus();
+   }	
+}
+function f3(form)
+{ 
+   if(form.rpw.value.length>20)
+   {
+	alert("RE-PASSWORD is out of range");
+	form.rpw.value="";
+	form.rpw.focus();
+   }
+   if(!(form.pw.value == form.rpw.value))
+   {
+	alert("Sorry your PASSWORDS are not matched...");
+	form.pw.value="";
+	form.rpw.value="";
+	form.pw.focus();
+   }
+}
+function f4(form)
+{ 
+   if(form.fn.value.length>20)
+   {
+	alert("This field is out of range");
+	form.fn.value="";
+	form.fn.focus();
+   }
+   if(form.fn.value == "")
+   {
+	alert("Sorry! U must enter this field");
+	form.fn.value="";
+	form.fn.focus();
+   }	
+}
+function f5(form)
+{ 
+   if(form.ln.value.length>20)
+   {
+	alert("This field is out of range");
+	form.ln.value="";
+	form.ln.focus();
+   }
+   if(form.ln.value == "")
+   {
+	alert("Sorry ! U must enter this field");
+	form.ln.value="";
+	form.ln.focus();
+   }	
+}
+</script>
+<noscript>
+	Your Browser Doesn't Support
+</noscript>
+</HEAD>
+<BODY bgcolor=lightyellow background=paper_bg.gif>
+<form name=frm1 method=post action="http://peers:8080/servlet/NewUsers">
+<pre><font size=3px color=blue>
+           LOGINID      <input type=text name=ui size=20 onChange="f1(this.form)">
+	   PASSWORD     <input type=password name=pw size=20 onChange="f2(this.form)">
+	   RE-PASSWORD  <input type=password name=rpw size=20 onChange="f3(this.form)">
+	   FIRST NAME   <input type=text name=fn size=20 onChange="f4(this.form)">
+	   LAST NAME    <input type=text name=ln size=20 onChange="f5(this.form)">
+	   BIRTH DATE   <select name=d size=1>
+			<option>1<option>2<option>3<option>4<option>5<option>6<option>7<option>8<option>9
+			<option>10<option>11<option>12<option>13<option>14<option>15<option>16<option>17
+			<option>18<option>19<option>20<option>21<option>22<option>23<option>24<option>25
+			<option>26<option>27<option>28<option>29<option>30<option>31
+			</select><select name=m size=1>
+			<option>Jan<option>Feb<option>Mar<option>Apr<option>May
+			<option>Jun<option>Jul<option>Aug<option>Sep<option>Oct
+			<option>Nov<option>Dec</select><input type=text name=y size=4>
+	   GENDER  	male<input type=radio name=g1 value=m checked>female<input type=radio name=g1 value=f>
+	   OCCUPATION   <select name=o size=1>
+			<option>college student
+			<option>graduate
+			<option>sales/marketing
+			<option>computer technical
+			<option>computer engineering
+			<option>executive/managerial
+		       	</select></font>
+                             <input type=submit name=b1 value=Submit><font size=5px color=blue> <b><a href=users.html>Back..</a></b>
+</font>
+</pre>
+</form>
+</BODY>
+</HTML>
+	
